@@ -1,0 +1,260 @@
+/* css/feed.css */
+
+.app-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.feed-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+/* --- TICKET --- */
+.match-ticket {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.match-ticket:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 107, 0, 0.15);
+}
+
+.ticket-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.sport-futbol { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.sport-basket { background: linear-gradient(135deg, #e67e22, #d35400); }
+.sport-voley { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.sport-default { background: linear-gradient(135deg, #34495e, #2c3e50); }
+
+.sport-badge {
+    font-weight: 800;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+.date-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+.ticket-body {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.missing-players-wrapper {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #eee;
+}
+
+.missing-label {
+    display: block;
+    color: #95a5a6;
+    font-size: 0.85em;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: -5px;
+}
+
+.missing-number {
+    font-size: 3.5em;
+    font-weight: 900;
+    color: var(--primary-orange, #ff6b00);
+    margin: 0;
+    line-height: 1;
+}
+
+.missing-number.critical {
+    color: #e74c3c;
+}
+
+.missing-number span {
+    font-size: 0.25em;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    transform: translateY(-8px);
+}
+
+/* --- DETALLES LIMPIOS --- */
+.match-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-icon-text {
+    font-size: 0.8em;
+    font-weight: 800;
+    color: var(--text-muted, #95a5a6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 65px; /* Alineación vertical perfecta */
+}
+
+.detail-text {
+    font-size: 0.95em;
+    color: var(--text-main, #2c3e50);
+}
+
+.host-section {
+    background: #ffffff;
+    border: 2px solid #f8fafc;
+    padding: 12px 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    margin-top: 5px;
+}
+
+.host-section:hover {
+    border-color: #e2e8f0;
+}
+
+.host-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--text-main, #2c3e50);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.host-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.host-label {
+    font-size: 0.75em;
+    color: #95a5a6;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.host-name {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--text-main, #2c3e50);
+}
+
+.host-stars {
+    font-size: 0.85em;
+    font-weight: normal;
+    color: var(--primary-orange, #ff6b00);
+}
+
+.ticket-footer {
+    padding: 0 25px 25px 25px;
+}
+
+.btn-apuntarse {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary-orange, #ff6b00);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-apuntarse:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+
+.btn-apuntarse.success {
+    background-color: #2ecc71;
+    box-shadow: none;
+    cursor: default;
+}
+.btn-apuntarse.success:hover { transform: none; }
+
+/* Estado vacío mejorado sin emojis */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 2px dashed #e2e8f0;
+}
+
+.empty-state h2 {
+    color: var(--text-main, #2c3e50);
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.empty-state p {
+    color: var(--text-muted, #7f8c8d);
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.btn-create-empty {
+    background-color: var(--primary-orange, #ff6b00);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-create-empty:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+}

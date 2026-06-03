@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Registro</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-dynamic">
+
+    <div class="diagonal-layout">
+        
+        <div class="diagonal-brand">
+            <img src="logo.png" alt="Falta Uno" class="diagonal-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            <h1 class="diagonal-title">FALTA UNO</h1>
+            <p class="diagonal-subtitle">Únete a la comunidad de deportes urbanos.</p>
+
+            <ul class="diagonal-features">
+                <li><span class="feature-dot"></span>Crea tu perfil de jugador.</li>
+                <li><span class="feature-dot"></span>Organiza partidos en tu ciudad.</li>
+                <li><span class="feature-dot"></span>Conoce a otros deportistas.</li>
+            </ul>
+        </div>
+
+        <div class="diagonal-form-wrapper">
+            <div class="diagonal-form">
+                <h2>Crear Cuenta</h2>
+                <p class="form-desc">Rellena tus datos para saltar a la cancha</p>
+
+                <div class="input-group">
+                    <label>Nombre de Usuario</label>
+                    <input type="text" id="reg-nombre" placeholder="Tu nombre o apodo">
+                </div>
+                <div class="input-group">
+                    <label>Apellidos</label>
+                    <input type="text" id="reg-apellidos" placeholder="Tus apellidos">
+                </div>
+
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="reg-email" placeholder="tu@email.com">
+                </div>
+
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="reg-password" placeholder="••••••••">
+                </div>
+
+                <div class="input-group">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" id="reg-password-confirm" placeholder="••••••••">
+                </div>
+
+                <button class="btn-diagonal" onclick="registrarUsuario()">Registrarse</button>
+
+                <div class="form-footer">
+                    ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/registro.js"></script>
+</body>
+</html>

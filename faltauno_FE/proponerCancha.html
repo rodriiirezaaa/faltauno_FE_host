@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Proponer Cancha</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/proponerCancha.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html">Tablón de Partidos</a>
+                <a href="crearAlerta.html">Crear Alerta</a>
+                <a href="proponerCancha.html" class="active">Proponer Cancha</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar" id="nav-avatar-char">?</div>
+                <span id="nav-user-name">Usuario</span>
+            </div>
+            
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>></span></a>
+                <a href="configuracion.html">Configuración <span>></span></a>
+                <a href="ayuda.html">Ayuda y Soporte <span>></span></a>
+                <a href="panelAdmin.html">Panel Admin <span>></span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="radar-layout">
+        
+        <div id="map" class="radar-map"></div>
+
+        <aside class="radar-panel">
+            <div class="radar-header">
+                <h2>Añadir Cancha</h2>
+                <p>Modo exploración: Marca un punto exacto en el mapa y registra las instalaciones.</p>
+            </div>
+
+            <div class="radar-body">
+                
+                <div class="coords-display">
+                    <span class="coords-label">Coordenadas (Lat, Lng)</span>
+                    <div class="coords-value" id="coordenadas-texto">-- , --</div>
+                </div>
+
+                <div class="form-group-dark">
+                    <label>Nombre de la instalación</label>
+                    <input type="text" id="nombre-cancha" placeholder="Ej: Polideportivo Oira">
+                </div>
+
+                <div class="form-group-dark">
+                    <label>Deporte principal</label>
+                    <select id="deporte-cancha">
+                        <option value="" disabled selected>Selecciona un deporte...</option>
+                        <option value="Fútbol">Fútbol</option>
+                        <option value="Baloncesto">Baloncesto</option>
+                        <option value="Voleibol">Voleibol</option>
+                        <option value="Multideporte">Multideporte</option>
+                    </select>
+                </div>
+
+                <div class="form-group-dark">
+                    <label>Estado de conservación</label>
+                    <select id="estado-cancha">
+                        <option value="" disabled selected>¿En qué estado se encuentra?</option>
+                        <option value="Excelente">Excelente (Nuevo/Óptimo)</option>
+                        <option value="Bueno">Bueno (Jugable)</option>
+                        <option value="Regular">Regular (Desgaste visible)</option>
+                        <option value="Malo">Malo (Dañado)</option>
+                    </select>
+                </div>
+
+                <div class="form-group-dark">
+                    <label>Información para el administrador</label>
+                    <textarea id="info-extra" rows="3" placeholder="Ej: Las luces se apagan a las 23:00..."></textarea>
+                </div>
+
+                <button class="btn-enviar-radar" onclick="enviarSolicitud()">Registrar Ubicación</button>
+            </div>
+        </aside>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/proponerCancha.js"></script>
+</body>
+</html>

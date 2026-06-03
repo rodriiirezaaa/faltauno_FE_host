@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Panel de Administración</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+   <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html">Tablón de Partidos</a>
+                <a href="crearAlerta.html">Crear Alerta</a>
+                <a href="proponerCancha.html">Proponer Cancha</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar">R</div>
+                <span>Rodrigo</span>
+            </div>
+            
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>></span></a>
+                <a href="configuracion.html">Configuración <span>></span></a>
+                <a href="ayuda.html">Ayuda y Soporte <span>></span></a>
+                <a href="panelAdmin.html">Panel Admin <span>></span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container" style="flex-grow: 1;">
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">Panel de Control</h1>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="admin-card">
+                <h3 class="card-title">Resumen del Sistema</h3>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Pistas Pendientes</span>
+                    <span class="stat-number" id="stat-pistas">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Usuarios Activos</span>
+                    <span class="stat-number" id="stat-usuarios">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Alertas Activas</span>
+                    <span class="stat-number" id="stat-alertas">0</span>
+                </div>
+                </div>
+
+           <div class="admin-card">
+                <h3 class="card-title">Aprobar Pistas (Cola)</h3>
+                <div id="admin-pistas-list">
+                    <div style="text-align: center; color: #888; padding: 20px;">
+                        Cargando pistas pendientes...
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <h3 class="card-title">Comunidad y Moderación</h3>
+                <input type="text" id="admin-search-user" class="admin-search-input" placeholder="Buscar por nombre o email..." onkeyup="filtrarUsuarios()">
+
+                <div class="user-list-container" id="admin-user-list">
+                </div>
+
+                <div id="ban-panel" style="display: none;">
+                    <h4 style="margin-top: 0; color: #c62828;">Sancionar a: <span id="ban-target-name">Usuario</span></h4>
+                    
+                    <div class="form-group">
+                        <label>Sancionar cuenta hasta:</label>
+                        <input type="datetime-local" id="ban-date">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Motivo de la sanción:</label>
+                        <textarea id="ban-reason" placeholder="Spam, comportamiento antideportivo, insultos..."></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn btn-ban" onclick="ejecutarBan()">Aplicar Sanción</button>
+                        <button class="btn" style="background:#bdc3c7; color:#333;" onclick="cancelarBan()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>Falta Uno - Deportes Urbanos © 2026</p>
+        <div class="footer-links">
+            <a href="legal.html#privacidad">Política de Privacidad</a>
+            <a href="legal.html#terminos">Términos de uso</a>
+            <a href="legal.html#contacto">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

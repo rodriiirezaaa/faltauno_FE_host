@@ -1,0 +1,255 @@
+/* css/login.css */
+
+.login-dynamic {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.diagonal-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* --- IZQUIERDA: Textura Deportiva y Corte --- */
+.diagonal-brand {
+    flex: 1.2;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.04) 2px,
+            transparent 2px,
+            transparent 12px
+        ),
+        linear-gradient(135deg, #ff6b00 0%, #cc5500 100%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10% 12%;
+    color: white;
+    z-index: 2;
+}
+
+.diagonal-logo {
+    width: 90px;
+    margin-bottom: 25px;
+    object-fit: contain;
+}
+
+.diagonal-title {
+    font-size: 4.5em;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    letter-spacing: -2px;
+    line-height: 1;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.diagonal-subtitle {
+    font-size: 1.3em;
+    font-weight: 500;
+    opacity: 0.95;
+    margin: 0 0 40px 0;
+}
+
+/* --- LISTA ALINEADA CORRECTAMENTE --- */
+.diagonal-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.diagonal-features li {
+    font-size: 1.15em;
+    display: flex;
+    align-items: flex-start; /* El punto siempre se queda en la primera línea */
+    gap: 15px;
+    opacity: 0.95;
+}
+
+.feature-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    flex-shrink: 0;
+    margin-top: 8px; /* Empujamos el punto hacia abajo para que alinee con el texto */
+}
+
+/* --- DERECHA: Formulario --- */
+.diagonal-form-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin-left: -10%;
+    padding-left: 10%;
+    z-index: 1;
+}
+
+.diagonal-form {
+    width: 100%;
+    max-width: 380px;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05); 
+}
+
+.diagonal-form h2 {
+    font-size: 2.8em;
+    color: var(--text-main, #2c3e50);
+    margin: 0 0 5px 0;
+    letter-spacing: -1px;
+}
+
+.form-desc {
+    color: var(--text-muted, #7f8c8d);
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 700;
+    color: var(--text-main, #2c3e50);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1.05em;
+    color: var(--text-main, #2c3e50);
+    box-sizing: border-box;
+    transition: all 0.3s;
+    background-color: #f8fafc;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-orange, #ff6b00);
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
+}
+
+.btn-diagonal {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary-orange, #ff6b00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    margin-bottom: 15px;
+}
+
+.btn-diagonal:hover {
+    background-color: var(--hover-orange, #e65c00);
+    transform: translateY(-2px);
+}
+
+.btn-diagonal-outline {
+    width: 100%;
+    padding: 16px;
+    background-color: transparent;
+    color: var(--text-main, #2c3e50);
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-diagonal-outline:hover {
+    border-color: var(--text-main, #2c3e50);
+    background-color: #f8fafc;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 35px;
+    color: var(--text-muted, #7f8c8d);
+    font-size: 1em;
+}
+
+.form-footer a {
+    color: var(--primary-orange, #ff6b00);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ==========================================
+   📱 DISEÑO RESPONSIVE MÓVIL
+   ========================================== */
+@media (max-width: 900px) {
+    .login-dynamic {
+        overflow-y: auto; 
+    }
+
+    .diagonal-layout {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .diagonal-brand {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); 
+        flex: none;
+        padding: 40px 20px 80px 20px; 
+        align-items: center;
+        text-align: center;
+    }
+
+    .diagonal-title {
+        font-size: 3.5em;
+    }
+
+    /* Solución a la alineación en móvil */
+    .diagonal-features {
+        align-items: center; /* Centra el bloque entero de la lista */
+    }
+
+    .diagonal-features li {
+        width: 100%;
+        max-width: 320px; /* Evita que el texto se estire de lado a lado */
+        text-align: left; /* El texto se mantiene justificado a la izquierda */
+        align-items: flex-start;
+    }
+    
+    .diagonal-form-wrapper {
+        margin-left: 0;
+        padding: 0 20px 40px 20px;
+        margin-top: -60px; 
+        z-index: 5;
+    }
+    
+    .diagonal-form {
+        padding: 30px 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+    }
+}

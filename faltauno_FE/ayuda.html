@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Ayuda y Soporte</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/ayuda.css">
+
+</head>
+<body>
+  <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html">Tablón de Partidos</a>
+                <a href="crearAlerta.html">Crear Alerta</a>
+                <a href="proponerCancha.html">Proponer Cancha</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar">R</div>
+                <span>Rodrigo</span>
+            </div>
+            
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>></span></a>
+                <a href="configuracion.html">Configuración <span>></span></a>
+                <a href="ayuda.html" class="active">Ayuda y Soporte <span>></span></a>
+                <a href="panelAdmin.html">Panel Admin <span>></span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="help-container">
+        <h2 class="help-title">¿En qué podemos ayudarte?</h2>
+
+        <div class="faq-box">
+            <p class="faq-question">¿Cómo propongo una cancha nueva que no está en el mapa?</p>
+            <p class="faq-answer">Ve a la sección "Crear Alerta". Si el lugar donde vas a jugar no tiene un pin en el mapa, contacta con nosotros desde el formulario de abajo indicando las coordenadas exactas.</p>
+        </div>
+
+        <div class="faq-box">
+            <p class="faq-question">¿Qué pasa si alguien tiene un comportamiento antideportivo?</p>
+            <p class="faq-answer">Puedes reportar al usuario desde su perfil público. Los administradores revisarán el caso y aplicarán suspensiones si es necesario.</p>
+        </div>
+
+        <div class="contact-form">
+            <h3>Enviar un mensaje a Soporte</h3>
+            <div class="form-group">
+                <input type="text" placeholder="Asunto (Ej: Error en el mapa)">
+            </div>
+            <div class="form-group">
+                <textarea rows="4" placeholder="Describe tu problema o sugerencia..."></textarea>
+            </div>
+            <button class="btn-send" onclick="alert('Mensaje enviado. Te responderemos pronto.')">Enviar Mensaje</button>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>Falta Uno - Deportes Urbanos © 2026</p>
+        <div class="footer-links">
+            <a href="legal.html#privacidad">Política de Privacidad</a>
+            <a href="legal.html#terminos">Términos de uso</a>
+            <a href="legal.html#contacto">Contacto</a>
+        </div>
+    </footer>
+
+   <script src="js/global.js"></script>
+</body>
+</html>

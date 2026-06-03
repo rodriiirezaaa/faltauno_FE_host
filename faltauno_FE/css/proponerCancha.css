@@ -1,0 +1,165 @@
+/* css/proponerCancha.css */
+
+body {
+    overflow: hidden; 
+}
+.radar-layout {
+    position: relative;
+    height: calc(100vh - 75px);
+    width: 100vw;
+    background-color: #1a1a1a; 
+}
+
+/* Forzamos el ID #map con !important para que tenga el 100% sí o sí */
+#map.radar-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1;
+}
+/* --- EL PANEL OSCURO --- */
+.radar-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    width: 400px;
+    background: rgba(17, 24, 39, 0.95); 
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 107, 0, 0.3); /* Borde naranja sutil */
+    border-radius: 16px;
+    box-shadow: -10px 10px 40px rgba(0,0,0,0.5);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    color: #e5e7eb;
+}
+
+.radar-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.radar-header h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.8em;
+    color: #ffffff;
+}
+
+.radar-header p {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.radar-body {
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.coords-display {
+    background: #000000;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+}
+
+.coords-label {
+    display: block;
+    color: var(--primary-orange, #ff6b00);
+    font-size: 0.75em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.coords-value {
+    font-family: 'Courier New', Courier, monospace;
+    color: #10b981; 
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Inputs en modo oscuro */
+.form-group-dark label {
+    display: block;
+    font-weight: 600;
+    color: #d1d5db;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+    text-transform: uppercase;
+}
+
+.form-group-dark input,
+.form-group-dark select,
+.form-group-dark textarea {
+    width: 100%;
+    padding: 14px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #374151;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.form-group-dark input:focus,
+.form-group-dark select:focus,
+.form-group-dark textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange, #ff6b00);
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.2);
+}
+
+.form-group-dark select option {
+    background-color: #111827;
+    color: white;
+}
+
+.btn-enviar-radar {
+    width: 100%;
+    background-color: var(--primary-orange, #ff6b00);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-enviar-radar:hover {
+    background-color: #e65c00;
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .radar-panel {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        max-height: 60vh;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+}

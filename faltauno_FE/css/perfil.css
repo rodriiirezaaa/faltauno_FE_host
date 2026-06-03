@@ -1,0 +1,266 @@
+/* css/perfil.css */
+
+.profile-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: var(--text-main);
+}
+
+/* CABECERA INTERNA DEL PERFIL */
+.user-info-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.big-avatar {
+    width: 90px;
+    height: 90px;
+    background-color: var(--text-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.user-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-group label {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.info-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f9fbf9;
+    color: var(--text-main);
+}
+
+/* BLOQUE DE 3 COLUMNAS INFERIOR */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Tarjeta Verde: Estadísticas */
+.stats-box {
+    background-color: #e8f5e9; /* Un verde pastel premium */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.stat-item {
+    margin-bottom: 18px;
+}
+
+.stat-item span {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--text-main);
+}
+
+.progress-bar-bg {
+    background-color: white;
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    background-color: var(--primary-orange);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.stats-note {
+    font-size: 0.75em;
+    color: var(--text-muted);
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Tarjeta Naranja: Valoración */
+.rating-box {
+    background-color: var(--primary-orange);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating-stars {
+    font-size: 2.2em;
+    margin-top: 12px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.star-empty {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Tarjeta Blanca: Actividad */
+.activity-box {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #eef0f2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-list li {
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: var(--text-main);
+    border-bottom: 1px solid #f4f7f6;
+    line-height: 1.4;
+}
+
+.activity-list li:last-child { border-bottom: none; }
+
+/* BOTONES INFERIORES */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 14px 35px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn:active { transform: scale(0.98); }
+.btn-edit { background-color: var(--text-main); }
+.btn-edit:hover { background-color: #34495e; }
+.btn-logout { background-color: #e74c3c; }
+.btn-logout:hover { background-color: #c0392b; }
+
+@media (max-width: 600px) {
+    .user-info-section { flex-direction: column; text-align: center; }
+    .action-buttons { flex-direction: column; width: 100%; }
+    .btn { width: 100%; }
+}
+/* --- SECCIÓN DE SOLICITUDES DE CANCHAS --- */
+.requests-section {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 40px;
+}
+
+.requests-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    border-bottom: 2px solid #f4f7f6;
+    padding-bottom: 10px;
+}
+
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.requests-table th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f8f9fa;
+    color: var(--text-muted);
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+}
+
+.requests-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee;
+    color: var(--text-main);
+}
+
+/* Sistema de Semáforo (Badges) */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-pending {
+    background-color: #fff3e0;
+    color: #ef6c00; /* Naranja/Amarillo (Pendiente) */
+}
+
+.status-approved {
+    background-color: #e8f5e9;
+    color: #2e7d32; /* Verde (Aprobada) */
+}
+
+.status-rejected {
+    background-color: #ffebee;
+    color: #c62828; /* Rojo (Rechazada) */
+}
+
+@media (max-width: 600px) {
+    .requests-table {
+        display: block;
+        overflow-x: auto; /* Para que en móvil se pueda deslizar la tabla */
+    }
+}

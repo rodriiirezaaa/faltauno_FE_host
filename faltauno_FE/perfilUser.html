@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Perfil de Usuario</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html">Tablón de Partidos</a>
+                <a href="crearAlerta.html">Crear Alerta</a>
+                <a href="proponerCancha.html">Proponer Cancha</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar">R</div>
+                <span>Rodrigo</span>
+            </div>
+            
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>&gt;</span></a>
+                <a href="configuracion.html">Configuración <span>&gt;</span></a>
+                <a href="ayuda.html">Ayuda y Soporte <span>&gt;</span></a>
+                <a href="panelAdmin.html">Panel Admin <span>&gt;</span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <h1 class="profile-title">Perfil de usuario</h1>
+
+        <div class="user-info-section">
+            <div class="big-avatar" id="perfil-avatar">?</div>
+            <div class="user-details">
+                <div class="info-group">
+                    <label>Nombre completo</label>
+                    <input type="text" id="perfil-nombre" value="" readonly>
+                </div>
+                <div class="info-group">
+                    <label>Ciudad</label>
+                    <input type="text" id="perfil-ciudad" value="" placeholder="Añade tu ciudad...">
+                </div>
+                <div class="info-group">
+                    <label>Rol de la cuenta</label>
+                    <input type="text" id="perfil-rol" value="" readonly style="background-color: #f5f5f5;">
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="stats-box">
+                <h3>Estadísticas</h3>
+                <div class="stat-item">
+                    <span id="stat-partidos">Partidos jugados (0)</span>
+                    <div class="progress-bar-bg"><div id="bar-partidos" class="progress-bar-fill" style="width: 0%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span id="stat-alertas">Alertas Enviadas (0)</span>
+                    <div class="progress-bar-bg"><div id="bar-alertas" class="progress-bar-fill" style="width: 0%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span id="stat-pistas">Pistas descubiertas (0)</span>
+                    <div class="progress-bar-bg"><div id="bar-pistas" class="progress-bar-fill" style="width: 0%;"></div></div>
+                </div>
+            </div>
+
+            <div class="rating-box">
+                <h3>VALORACIÓN MEDIA</h3>
+                <div style="font-size: 0.9em; opacity: 0.9;">Tu puntuación como organizador</div>
+                <div class="rating-stars" id="perfil-estrellas">
+                    </div>
+            </div>
+
+            <div class="activity-box">
+                <h3>Actividad Reciente</h3>
+                <ul class="activity-list" id="lista-actividad">
+                    <!-- Contenido inyectado desde JS -->
+                </ul>
+            </div>
+        </div>
+
+        <section class="requests-section">
+            <h3>Mis Solicitudes de Instalaciones</h3>
+            <table class="requests-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de la Cancha</th>
+                        <th>Fecha Solicitud</th>
+                        <th>Deporte</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="requests-table-body">
+                    </tbody>
+            </table>
+        </section>
+
+        <div class="action-buttons">
+            <button class="btn btn-edit" onclick="mostrarNotificacion('Perfil actualizado', 'exito')">Guardar Cambios</button>
+            <button class="btn btn-logout" onclick="window.location.href='login.html'">Cerrar Sesión</button>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>Falta Uno - Deportes Urbanos © 2026</p>
+        <div class="footer-links">
+            <a href="legal.html#privacidad">Política de Privacidad</a>
+            <a href="legal.html#terminos">Términos de uso</a>
+            <a href="legal.html#contacto">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="js/global.js"></script>
+    <script src="js/perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Tablón de Partidos</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/feed.css">
+</head>
+<body>
+
+     <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html" class="active">Tablón de Partidos</a>
+                <a href="crearAlerta.html">Crear Alerta</a>
+                <a href="proponerCancha.html">Proponer Cancha</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar">R</div>
+                <span>Rodrigo</span>
+            </div>
+            
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>></span></a>
+                <a href="configuracion.html">Configuración <span>></span></a>
+                <a href="ayuda.html">Ayuda y Soporte <span>></span></a>
+                <a href="panelAdmin.html">Panel Admin <span>></span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-container" style="flex-grow: 1;">
+        <div class="feed-container" id="feed-container">
+            <div class="empty-state">Cargando pachangas cercanas...</div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>Falta Uno - Deportes Urbanos © 2026</p>
+        <div class="footer-links">
+            <a href="legal.html#privacidad">Política de Privacidad</a>
+            <a href="legal.html#terminos">Términos de uso</a>
+            <a href="legal.html#contacto">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="js/global.js"></script>
+    <script src="js/feed.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Crear Alerta</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/crearAlerta.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html">Tablón de Partidos</a>
+                <a href="crearAlerta.html" class="active">Crear Alerta</a>
+                <a href="proponerCancha.html">Proponer Cancha</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar" id="nav-avatar-char">?</div>
+                <span id="nav-user-name">Usuario</span>
+            </div>
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>></span></a>
+                <a href="configuracion.html">Configuración <span>></span></a>
+                <a href="ayuda.html">Ayuda y Soporte <span>></span></a>
+                <a href="panelAdmin.html">Panel Admin <span>></span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="alerta-split-layout">
+        
+        <aside class="alerta-sidebar-form">
+            <div class="sidebar-header">
+                <h2>Crear Alerta</h2>
+                <p>Configura tu partido, elige una cancha en el mapa y encuentra a los jugadores que te faltan.</p>
+            </div>
+
+            <div class="form-scroll-area">
+                <div class="form-group-modern">
+                    <label>Deporte</label>
+                    <div class="radio-group">
+                        <label class="radio-card"><input type="radio" name="deporte" value="Fútbol" checked> Fútbol</label>
+                        <label class="radio-card"><input type="radio" name="deporte" value="Baloncesto"> Baloncesto</label>
+                        <label class="radio-card"><input type="radio" name="deporte" value="Voleibol"> Voleibol</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group-modern half">
+                        <label>Día y hora</label>
+                        <input type="datetime-local" id="fecha-hora">
+                    </div>
+                    <div class="form-group-modern half">
+                        <label>Nº Jugadores</label>
+                        <input type="number" id="num-jugadores" min="1" value="1">
+                    </div>
+                </div>
+
+                <div class="form-group-modern">
+                    <label>Rango de edad orientativo</label>
+                    <div class="rango-edad">
+                        <input type="number" placeholder="Min" id="edad-min" value="16">
+                        <span>a</span>
+                        <input type="number" placeholder="Max" id="edad-max" value="99">
+                    </div>
+                </div>
+
+                <div class="form-group-modern">
+                    <label>Información adicional</label>
+                    <textarea id="info-extra" rows="4" placeholder="Ej: Nivel del partido, hay que llevar balón, color de camiseta..."></textarea>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="btn-publicar-alerta" onclick="publicarAlerta()">Publicar Alerta</button>
+            </div>
+        </aside>
+
+        <section class="alerta-map-area">
+            
+            <div class="map-top-bar">
+                <div class="cancha-seleccionada-info">
+                    <span class="info-label">Cancha seleccionada:</span>
+                    <strong id="cancha-nombre">Ninguna (Haz clic en un marcador)</strong>
+                </div>
+            </div>
+
+            <div id="map" class="mapa-fullscreen"></div>
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/crearAlerta.js"></script>
+</body>
+</html>

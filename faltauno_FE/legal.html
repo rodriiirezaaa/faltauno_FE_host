@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Legal - Falta Uno</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/legal.css">
+
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html">Tablón de Partidos</a>
+                <a href="crearAlerta.html">Crear Alerta</a>
+                <a href="proponerCancha.html">Proponer Cancha</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar">R</div>
+                <span>Rodrigo</span>
+            </div>
+            
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>></span></a>
+                <a href="configuracion.html">Configuración <span>></span></a>
+                <a href="ayuda.html">Ayuda y Soporte <span>></span></a>
+                <a href="panelAdmin.html">Panel Admin <span>></span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="legal-container">
+        <h1>Información Legal y Contacto</h1>
+
+        <section id="privacidad" class="legal-section">
+            <h2>Política de Privacidad</h2>
+            <p>En Falta Uno nos tomamos muy en serio la privacidad de tus datos. La información personal recogida a través de nuestra plataforma (como correo electrónico o ubicación aproximada) se utiliza exclusivamente para conectarte con otros jugadores y facilitar la organización de partidos locales. No vendemos tus datos a terceros bajo ninguna circunstancia.</p>
+        </section>
+
+        <section id="terminos" class="legal-section">
+            <h2>Términos de Uso</h2>
+            <p>Al utilizar Falta Uno, aceptas hacer un uso cívico y deportivo de la plataforma. La cuenta podrá ser suspendida si se detectan comportamientos antideportivos, spam, o si se hace un mal uso del sistema de creación de alertas de partidos. El usuario es responsable de verificar el estado real de las instalaciones públicas antes de jugar.</p>
+        </section>
+
+        <section id="contacto" class="legal-section">
+            <h2>Contacto y Soporte</h2>
+            <p>Si tienes algún problema con tu cuenta, has detectado un error en el mapa, o quieres sugerir una nueva instalación deportiva, puedes ponerte en contacto con nuestro equipo de administración en el siguiente correo: <b>soporte@faltauno.com</b></p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>Falta Uno - Deportes Urbanos © 2026</p>
+        <div class="footer-links">
+            <a href="legal.html#privacidad">Política de Privacidad</a>
+            <a href="legal.html#terminos">Términos de uso</a>
+            <a href="legal.html#contacto">Contacto</a>
+        </div>
+    </footer>
+<script src="js/global.js"></script>
+</body>
+
+</html>

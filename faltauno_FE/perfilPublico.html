@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Perfil Público</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/perfilPublico.css">
+</head>
+<body>
+
+     <header class="main-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Falta Uno" class="header-logo" onclick="window.location.href='inicio.html'" style="cursor: pointer;">
+            
+            <nav class="nav-links">
+                <a href="inicio.html">Mapa</a>
+                <a href="feed.html">Tablón de Partidos</a>
+                <a href="crearAlerta.html">Crear Alerta</a>
+                <a href="proponerCancha.html">Proponer Cancha</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <div class="user-profile-btn" onclick="toggleMenu()">
+                <div class="user-avatar">R</div>
+                <span>Rodrigo</span>
+            </div>
+            
+            <div class="dropdown-menu" id="userMenu">
+                <a href="perfilUser.html">Mi Perfil <span>></span></a>
+                <a href="configuracion.html">Configuración <span>></span></a>
+                <a href="ayuda.html">Ayuda y Soporte <span>></span></a>
+                <a href="panelAdmin.html">Panel Admin <span>></span></a>
+                <a href="login.html" class="logout-link">Cerrar sesión <span>x</span></a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="public-profile-container">
+        
+        <div class="user-card">
+            <div class="avatar-large" id="perfil-publico-avatar">?</div>
+            <h1 class="user-name" id="perfil-publico-nombre">Cargando...</h1>
+            <div class="user-meta">Jugador en <span id="perfil-publico-ciudad">...</span></div>
+
+            <div class="rating-section">
+                <p class="rating-title">Valorar a este jugador</p>
+                <div class="interactive-stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <p style="font-size: 0.85em; color: var(--text-muted); margin-top: 10px;">
+                    Valora su puntualidad y comportamiento en la cancha.
+                </p>
+            </div>
+
+            <div class="public-stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="perfil-publico-estrellas" style="font-size: 1.2em;">0 / 5</div>
+                    <div class="stat-label">Valoración Media</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">18</div>
+                    <div class="stat-label">Partidos Organizados</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">34</div>
+                    <div class="stat-label">Veces Apuntado</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>Falta Uno - Deportes Urbanos © 2026</p>
+        <div class="footer-links">
+            <a href="legal.html#privacidad">Política de Privacidad</a>
+            <a href="legal.html#terminos">Términos de uso</a>
+            <a href="legal.html#contacto">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="js/global.js"></script>
+    <script src="js/perfilPublico.js"></script>
+</body>
+</html>

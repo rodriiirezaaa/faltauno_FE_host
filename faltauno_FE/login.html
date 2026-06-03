@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta Uno - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-dynamic">
+
+    <div class="diagonal-layout">
+        
+        <div class="diagonal-brand">
+            <img src="logo.png" alt="Falta Uno" class="diagonal-logo">
+            <h1 class="diagonal-title">FALTA UNO</h1>
+            <p class="diagonal-subtitle">La comunidad definitiva de deportes urbanos.</p>
+
+            <ul class="diagonal-features">
+                <li><span class="feature-dot"></span>Encuentra canchas libres en tiempo real.</li>
+                <li><span class="feature-dot"></span>Únete a partidos o lanza tus alertas.</li>
+                <li><span class="feature-dot"></span>Valora a otros jugadores y forja tu reputación.</li>
+            </ul>
+        </div>
+
+        <div class="diagonal-form-wrapper">
+            <div class="diagonal-form">
+                <h2>Bienvenido</h2>
+                <p class="form-desc">Inicia sesión para saltar a la cancha</p>
+
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="email" placeholder="tu@email.com">
+                </div>
+
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••">
+                </div>
+
+                <button class="btn-diagonal" onclick="iniciarSesion()">Entrar a la pista</button>
+                <button class="btn-diagonal-outline" onclick="entrarComoInvitado()">Continuar como invitado</button>
+
+                <div class="form-footer">
+                    ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

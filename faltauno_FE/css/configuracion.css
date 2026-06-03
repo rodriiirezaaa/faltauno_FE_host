@@ -1,0 +1,13 @@
+.config-container {
+            max-width: 800px; margin: 40px auto; padding: 30px;
+            background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            flex-grow: 1;
+        }
+        .config-title { color: var(--primary-orange); margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px;}
+        .config-section { margin-bottom: 30px; }
+        .config-section h3 { color: var(--text-main); margin-bottom: 15px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.9em; color: #555;}
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        .toggle-switch { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .btn-save { background-color: var(--primary-orange); color: white; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; float: right;}

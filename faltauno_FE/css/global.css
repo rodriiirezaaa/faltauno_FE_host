@@ -1,0 +1,303 @@
+/* css/global.css */
+:root {
+    --primary-orange: #ff6b00;
+    --hover-orange: #e65c00;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #2c3e50;
+    --text-muted: #7f8c8d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que el footer siempre se quede abajo */
+}
+
+/* --- HEADER DINÁMICO --- */
+.main-header {
+    background-color: var(--card-bg);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-logo {
+    height: 45px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Navegación principal */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #fff3e6;
+    color: var(--primary-orange);
+}
+
+.nav-links a.active {
+    color: var(--primary-orange);
+    background-color: #fff3e6;
+}
+
+/* Usuario a la derecha */
+.header-right {
+    position: relative;
+}
+
+.user-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+.user-profile-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.user-avatar {
+    width: 38px; height: 38px;
+    background-color: var(--primary-orange);
+    color: white;
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-weight: bold;
+}
+/* --- MENÚ DESPLEGABLE DEL USUARIO (Añadir al final de global.css) --- */
+.header-right {
+    position: relative; /* Clave para que el menú flote justo debajo */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid #eee;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 1000;
+    flex-direction: column;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.dropdown-menu.active {
+    display: flex;
+}
+
+.dropdown-menu a {
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f4f7f6;
+    color: var(--primary-orange);
+}
+
+.dropdown-menu .logout-link {
+    border-top: 1px solid #eee;
+    color: #e74c3c;
+    margin-top: 5px;
+}
+.dropdown-menu .logout-link:hover {
+    background-color: #fdf0ed;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Empuja el footer al fondo de la pantalla */
+}
+
+.main-footer p { margin: 0 0 10px 0; font-weight: bold;}
+.footer-links a { color: #bdc3c7; text-decoration: none; margin: 0 10px; font-size: 0.9em; transition: color 0.2s;}
+.footer-links a:hover { color: var(--primary-orange); }
+/* --- NOTIFICACIONES INTEGRADAS (TOASTS) --- */
+.toast-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    min-width: 250px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Animaciones de entrada y salida */
+    animation: slideInToast 0.3s ease forwards, fadeOutToast 0.3s ease forwards 2.7s;
+}
+
+.toast.exito { background-color: #2ecc71; } /* Verde */
+.toast.error { background-color: #e74c3c; } /* Rojo */
+.toast.info { background-color: var(--primary-orange); } /* Naranja */
+
+@keyframes slideInToast {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOutToast {
+    from { opacity: 1; }
+    to { opacity: 0; display: none; }
+}
+/* ==========================================
+   📱 DISEÑO RESPONSIVE (MÓVILES Y TABLETS) - VERSIÓN LIMPIA Y CORREGIDA
+   ========================================== */
+
+/* ==========================================
+   📱 DISEÑO RESPONSIVE (MÓVILES Y TABLETS) - DEFINITIVO
+   ========================================== */
+
+@media (max-width: 768px) {
+    
+    /* Evita scroll horizontal en toda la página */
+    body { 
+        overflow-x: hidden !important; 
+    }
+
+    /* 1. CABECERA Y MENÚ */
+    .main-header {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px !important;
+    }
+    
+    .header-left {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .nav-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    .header-right {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* 2. VISTA MAPA (inicio.html) */
+    .main-content {
+        display: flex !important;
+        flex-direction: column !important; 
+        padding: 10px !important; /* Reducimos el espacio gris sobrante en móviles */
+        gap: 15px !important;
+    }
+    
+    .map-section {
+        width: 100% !important;
+        height: 55vh !important; /* Le damos un poco más de altura */
+        min-height: 400px !important;
+        margin: 0 !important;
+        padding: 5px !important; /* Reducimos el borde blanco para que el mapa sea más grande */
+        display: flex !important;
+        flex-direction: column !important;
+        box-sizing: border-box !important;
+    }
+    
+    #map {
+        width: 100% !important;
+        height: 100% !important; /* Obligamos a que pise cualquier altura fija de inicio.css */
+        flex-grow: 1 !important; /* Obliga al mapa a rellenar todo el espacio disponible */
+        border-radius: 8px !important;
+        z-index: 1 !important;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px !important;
+    }
+
+    /* 3. PANEL ADMIN Y PERFIL */
+    .dashboard-grid, 
+    .public-stats-grid {
+        display: grid !important; 
+        grid-template-columns: 1fr !important; /* Obliga a 1 sola columna vertical */
+    }
+    
+    .admin-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important; /* Corta lo que sobre para no romper la pantalla */
+    }
+
+    /* Ajuste específico para que el minimapa del admin se vea bien */
+    [id^="mapa-admin-"] {
+        width: 100% !important;
+        height: 250px !important;
+    }
+
+    /* 4. TABLÓN DE ANUNCIOS */
+    .alerta-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 5. TABLAS (Mi perfil): Scroll suave horizontal */
+    table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+}
